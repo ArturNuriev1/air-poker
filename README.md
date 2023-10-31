@@ -2,4 +2,8 @@
 
 ## TBD
 
-this is just hosting for the client instance of air-poker, making it so that one person can setup a server and play online rather than locally
+online multiplayer poker variation involving maths and memory
+
+client hosted using github pages and server hosted using adaptable
+
+only 90% finished but you can still play it at https://arturnuriev1.github.io/
