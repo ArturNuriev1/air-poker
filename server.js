@@ -103,8 +103,8 @@ io.on('connect', function (socket) {
     })
 })
 
-// const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-http.listen(3000, function () {
+http.listen(port, function () {
     console.log('Server started!')
 })
