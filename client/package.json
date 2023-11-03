@@ -1,7 +1,7 @@
 {
-  "name": "phaser3-project-template",
-  "version": "1.1.2",
-  "description": "A Phaser 3 Project Template",
+  "name": "air-poker",
+  "version": "1",
+  "description": "Air Poker",
   "main": "src/index.js",
   "scripts": {
     "predeploy": "npm run build",
