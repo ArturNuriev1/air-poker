@@ -45,6 +45,11 @@ io.on('connect', function (socket) {
         io.emit('isPlayerA')
     }
 
+    if (players.length === 2) {
+        console.log('Game is already in session')
+        socket.disconnect()
+    }
+
     socket.on('dealCards', function () {
         console.log(players)
         io.emit('dealCards')
