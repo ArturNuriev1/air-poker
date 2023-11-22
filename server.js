@@ -18,13 +18,13 @@ const bCard = 0
 
 io.on('connect', function (socket) {
     console.log('A user connected: ' + socket.id)
-
-
+    
     if (players.length < 2) {
         players.push(socket.id)
     }
-
-
+    
+    
+    console.log(players)
 
 
 
@@ -54,7 +54,6 @@ io.on('connect', function (socket) {
     }
 
     socket.on('dealCards', function () {
-        console.log(players)
         io.emit('dealCards')
     })
 
