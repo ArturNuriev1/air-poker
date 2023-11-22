@@ -25,12 +25,12 @@ io.on('connect', function (socket) {
 
 
 
-    //either disable card dealing until found server or create server browser
+    // either disable card dealing until found server or create server browser
 
 
 
 
-    //randomise word order using fisher-yates shuffle
+    // randomise word order using fisher-yates shuffle
     var j, x, i;
     for (i = 3; i >= 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
