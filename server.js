@@ -46,6 +46,7 @@ io.on('connect', function (socket) {
     }
 
     socket.on('dealCards', function () {
+        console.log(players)
         io.emit('dealCards')
     })
 
