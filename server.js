@@ -108,7 +108,7 @@ io.on('connect', function (socket) {
 
     socket.on('disconnect', function () {
         console.log('A user disconnected: ' + socket.id)
-        players = players.filter(player => player !== socket.id)
+        players = players.filter(player => player === socket.id)
     })
 })
 
