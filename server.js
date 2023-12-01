@@ -21,11 +21,11 @@ io.on('connect', function (socket) {
     
     
     if (players.length < 2) {
-        players.push(socket.id)    
         if (players.length === 0) {
             console.log('You are Player A')
             io.emit('isPlayerA')
         }
+        players.push(socket.id)    
     }
     
     
@@ -51,7 +51,7 @@ io.on('connect', function (socket) {
 
 
     if (players.length >= 2) {
-        console.log('Game is already in session')
+        console.log('Game is already in session', players)
         console.log('Booting out ', socket.id)
         socket.disconnect()
     }
