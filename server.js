@@ -50,7 +50,7 @@ io.on('connect', function (socket) {
 
 
 
-    if (players.length >= 2) {
+    if (players.length > 2) {
         console.log('Game is already in session', players)
         console.log('Booting out ', socket.id)
         socket.disconnect()
