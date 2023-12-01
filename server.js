@@ -19,12 +19,12 @@ const bCard = 0
 io.on('connect', function (socket) {
     console.log('A user connected: ' + socket.id)
     
-    if (players.length < 2) {
-        players.push(socket.id)    
-        if (players.length === 1) {
-            console.log('You are Player A')
-            io.emit('isPlayerA')
-        }
+    
+
+    players.push(socket.id)    
+    if (players.length === 0) {
+        console.log('You are Player A')
+        io.emit('isPlayerA')
     }
     
     
