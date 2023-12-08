@@ -2,8 +2,7 @@ const server = require('express')()
 const http = require('http').createServer(server)
 const io = require('socket.io')(http, {
     cors: {credentials: true, origin: true}, 
-    pingTimeout: 1000 * 60 * 5, 
-    pingInterval: 1000 * 60 * 3
+    maxDisconnectionDuration: 1 * 60 * 1000,
   })
 
 let players = []
