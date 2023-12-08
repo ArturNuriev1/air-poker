@@ -3,7 +3,7 @@ const http = require('http').createServer(server)
 const io = require('socket.io')(http, {
     cors: {
       origin: '*',
-    }
+    }, 'pingTimeout': 1000 * 60 * 5, 'pingInterval': 1000 * 60 * 3
   })
 
 let players = []
