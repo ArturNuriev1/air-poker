@@ -36,7 +36,7 @@ let playerArray = []
 let words = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
 
 const aCard = 0
-const bCard = 0
+const bCard = 0;
 
 io.on('connect', function (socket) {
     console.log('A user connected: ' + socket.id)
