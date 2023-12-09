@@ -5,7 +5,7 @@ const io = require('socket.io')(http, {
     maxDisconnectionDuration: 13 * 60 * 1000,
     pingInterval: 13 * 60 * 1000,
     pingTimeout: 13 * 60 * 1000,
-    transports: ['websocket']
+    // transports: ['websocket']
 })
 
 let players = []
@@ -13,7 +13,7 @@ let pickedVals = []
 let enemyArray = []
 let playerArray = []
 
-let words = ['Herrts', 'Diamonds', 'Clubs', 'Spades']
+let words = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
 
 const aCard = 0
 const bCard = 0
