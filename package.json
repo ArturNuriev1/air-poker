@@ -4,6 +4,8 @@
   "description": "Air Poker Server",
   "main": "client/src/index.js",
   "scripts": {
+    "start-server": "nodemon server.js",
+    "start-client": "webpack-dev-server --config webpack/base.js --open",
     "start": "nodemon server.js"
   },
   "repository": {
