@@ -15,7 +15,8 @@ const socketIO = require('socket.io')
 const app = express()
 var server = http.createServer(app)
 var io = socketIO(server, {
-  pingTimeout: 60000,
+    cors: {credentials: true, origin: true}, 
+    pingTimeout: 60000,
 })
 
 app.use('/static', express.static(__dirname + '/static'))
@@ -23,7 +24,7 @@ app.use('/static', express.static(__dirname + '/static'))
 
 const port = process.env.PORT || 3000;
 
-http.listen(port, function () {
+server.listen(port, function () {
     console.log('Server started!')
 })
 
@@ -71,7 +72,7 @@ io.on('connect', function (socket) {
 
 
 
-    if (players.length > 1) {
+    if (players.length > 2) {
         console.log('Game is already in session', players)
         console.log('Booting out ', socket.id)
         socket.disconnect()
