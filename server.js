@@ -18,14 +18,14 @@ var io = socketIO(server, {
   pingTimeout: 60000,
 })
 
-app.set('port', 5000)
 app.use('/static', express.static(__dirname + '/static'))
 
 
-server.listen(5000, function () {
-  console.log('Starting server on port 5000')
-})
+const port = process.env.PORT || 3000;
 
+http.listen(port, function () {
+    console.log('Server started!')
+})
 
 let players = []
 let pickedVals = []
@@ -135,9 +135,3 @@ io.on('connect', function (socket) {
         console.log('New array: ' + players)
     })
 })
-
-// const port = process.env.PORT || 3000;
-
-// http.listen(port, function () {
-//     console.log('Server started!')
-// })
