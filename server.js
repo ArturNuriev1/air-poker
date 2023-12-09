@@ -7,7 +7,6 @@
 //     pingTimeout: 13 * 60 * 1000,
 //     // transports: ['websocket']
 // })
-
 const express = require('express')
 const http = require('http')
 const socketIO = require('socket.io')
@@ -19,8 +18,8 @@ var io = socketIO(server, {
     pingTimeout: 60000,
 })
 
-app.use('/static', express.static(__dirname + '/static'))
-
+// app.use('/static', express.static(__dirname + '/static'))
+app.use(express.static('public'))
 
 const port = process.env.PORT || 3000;
 
@@ -36,7 +35,7 @@ let playerArray = []
 let words = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
 
 const aCard = 0
-const bCard = 0;
+const bCard = 0
 
 io.on('connect', function (socket) {
     console.log('A user connected: ' + socket.id)
