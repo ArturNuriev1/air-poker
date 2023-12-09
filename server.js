@@ -1,29 +1,30 @@
-// const server = require('express')()
-// const http = require('http').createServer(server)
-// const io = require('socket.io')(http, {
-//     cors: {credentials: true, origin: true}, 
-//     maxDisconnectionDuration: 13 * 60 * 1000,
-//     pingInterval: 13 * 60 * 1000,
-//     pingTimeout: 13 * 60 * 1000,
-//     // transports: ['websocket']
-// })
-const express = require('express')
-const http = require('http')
-const socketIO = require('socket.io')
-
-const app = express()
-var server = http.createServer(app)
-var io = socketIO(server, {
+const server = require('express')()
+const http = require('http').createServer(server)
+const io = require('socket.io')(http, {
     cors: {credentials: true, origin: true}, 
-    pingTimeout: 60000,
+    maxDisconnectionDuration: 13 * 60 * 1000,
+    pingInterval: 13 * 60 * 1000,
+    pingTimeout: 13 * 60 * 1000,
+    // transports: ['websocket']
 })
 
+// const express = require('express')
+// const http = require('http')
+// const socketIO = require('socket.io')
+
+// const app = express()
+// var server = http.createServer(app)
+// var io = socketIO(server, {
+//     cors: {credentials: true, origin: true}, 
+//     pingTimeout: 60000,
+// })
+
 // app.use('/static', express.static(__dirname + '/static'))
-app.use(express.static('public'))
+// app.use(express.static('public'))
 
 const port = process.env.PORT || 3000;
 
-server.listen(port, function () {
+http.listen(port, function () {
     console.log('Server started!')
 })
 
