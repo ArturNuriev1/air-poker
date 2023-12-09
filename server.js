@@ -2,8 +2,10 @@ const server = require('express')()
 const http = require('http').createServer(server)
 const io = require('socket.io')(http, {
     cors: {credentials: true, origin: true}, 
-    maxDisconnectionDuration: 1 * 60 * 1000,
-  })
+    maxDisconnectionDuration: 13 * 60 * 1000,
+    pingInterval: 13 * 60 * 1000,
+    pingTimeout: 13 * 60 * 1000,
+})
 
 let players = []
 let pickedVals = []
