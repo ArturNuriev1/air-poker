@@ -52,7 +52,10 @@ io.on('connect', function (socket) {
             playerAID = socket.id
             io.emit('isPlayerA')
         }
-        players.push(socket.id)    
+        players.push(socket.id)
+        if (players.length == 2) {
+            io.emit('foundGame')
+        }
     }
     
     
