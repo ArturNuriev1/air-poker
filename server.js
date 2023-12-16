@@ -33,6 +33,9 @@ let pickedVals = []
 let enemyArray = []
 let playerArray = []
 
+let hasPlayerA = 0
+let playerAID = null
+
 let words = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
 
 const aCard = 0
@@ -43,8 +46,10 @@ io.on('connect', function (socket) {
     
     
     if (players.length < 2) {
-        if (players.length === 0) {
+        if (players.length === 0 || hasPlayerA === 0) {
             console.log('You are Player A')
+            hasPlayerA = 1
+            playerAID = socket.id
             io.emit('isPlayerA')
         }
         players.push(socket.id)    
@@ -131,6 +136,10 @@ io.on('connect', function (socket) {
     })
 
     socket.on('disconnect', function () {
+        if (socket.id == playerAID) {
+            hasPlayerA = 0
+            playerAID = null
+        }
         console.log('A user disconnected: ' + socket.id)
         players = players.filter(player => player !== socket.id)
         console.log('New array: ' + players)
