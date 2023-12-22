@@ -92,16 +92,16 @@ io.on('connect', function (socket) {
 
     socket.on('pickCards', function (isPlayerA) {
         for (let i = 0; i < 5; i++) {
-            let val = Math.floor(Math.random() * (65 - 6 + 1) + 6)
+            let val = Math.floor(Math.random() * (64 - 6 + 1) + 6)
             while (pickedVals.includes(val)) {
-                val = Math.floor(Math.random() * (65 - 6 + 1) + 6)
+                val = Math.floor(Math.random() * (64 - 6 + 1) + 6)
             }
             pickedVals.push(val)
             //console.log(pickedVals)
             enemyArray[i] = val
-            let val2 = Math.floor(Math.random() * (65 - 6 + 1) + 6)
+            let val2 = Math.floor(Math.random() * (64 - 6 + 1) + 6)
             while (pickedVals.includes(val2)) {
-                val2 = Math.floor(Math.random() * (65 - 6 + 1) + 6)
+                val2 = Math.floor(Math.random() * (64 - 6 + 1) + 6)
             }
             pickedVals.push(val2)
             playerArray[i] = val2
