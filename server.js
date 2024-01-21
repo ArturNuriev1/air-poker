@@ -2,25 +2,7 @@ const server = require('express')()
 const http = require('http').createServer(server)
 const io = require('socket.io')(http, {
     cors: {credentials: true, origin: true}, 
-    // maxDisconnectionDuration: 13 * 60 * 1000,
-    // pingInterval: 13 * 60 * 1000,
-    // pingTimeout: 13 * 60 * 1000,
-    // transports: ['websocket']
 })
-
-// const express = require('express')
-// const http = require('http')
-// const socketIO = require('socket.io')
-
-// const app = express()
-// var server = http.createServer(app)
-// var io = socketIO(server, {
-//     cors: {credentials: true, origin: true}, 
-//     pingTimeout: 60000,
-// })
-
-// app.use('/static', express.static(__dirname + '/static'))
-// app.use(express.static('public'))
 
 const port = process.env.PORT || 3000;
 
@@ -58,15 +40,7 @@ io.on('connect', function (socket) {
         }
     }
     
-    
     console.log(players)
-
-
-
-    // either disable card dealing until found server or create server browser
-
-
-
 
     // randomise word order using fisher-yates shuffle
     var j, x, i;
@@ -136,6 +110,10 @@ io.on('connect', function (socket) {
 
     socket.on('playerRaises', function(isPlayerA, amount) {
         io.emit('enemyRaises', isPlayerA, amount)
+    })
+
+    socket.on('resetGame', function () {
+        io.emit('resetGame')
     })
 
     socket.on('disconnect', function () {
