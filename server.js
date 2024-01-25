@@ -1,7 +1,9 @@
 const server = require('express')()
 const http = require('http').createServer(server)
 const io = require('socket.io')(http, {
-    cors: {credentials: true, origin: true}, 
+    cors: {
+      origin: '*',
+    }
 })
 
 const port = process.env.PORT || 3000;
