@@ -20,6 +20,7 @@ let playerArray = []
 let hasPlayerA = 0
 let playerAID = null
 
+// Possible suits for the cards (not currently used)
 let words = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
 
 const aCard = 0
@@ -28,15 +29,17 @@ const bCard = 0
 io.on('connect', function (socket) {
     console.log('A user connected: ' + socket.id)
     
-    
     if (players.length < 2) {
+        // isPlayerA helps the server to identify between and keep track of the two instances
         if (players.length === 0 || hasPlayerA === 0) {
             console.log('You are Player A')
             hasPlayerA = 1
             playerAID = socket.id
             io.emit('isPlayerA')
         }
+
         players.push(socket.id)
+
         if (players.length == 2) {
             io.emit('foundGame')
         }
@@ -44,8 +47,8 @@ io.on('connect', function (socket) {
     
     console.log(players)
 
-    // randomise word order using fisher-yates shuffle
-    var j, x, i;
+    // Randomise word order using fisher-yates shuffle (not currently used)
+    let j, x, i;
     for (i = 3; i >= 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
         x = words[i];
@@ -53,8 +56,6 @@ io.on('connect', function (socket) {
         words[j] = x;
     }
     console.log(words)
-
-
 
     if (players.length > 2) {
         console.log('Game is already in session', players)
@@ -66,22 +67,28 @@ io.on('connect', function (socket) {
         io.emit('dealCards')
     })
 
+    // Generate the values for both players' cards
+    // This is done server side to prevent the edge case of both players playing the same value card
     socket.on('pickCards', function (isPlayerA) {
         for (let i = 0; i < 5; i++) {
             let val = Math.floor(Math.random() * (64 - 6 + 1) + 6)
+
             while (pickedVals.includes(val)) {
                 val = Math.floor(Math.random() * (64 - 6 + 1) + 6)
             }
+
             pickedVals.push(val)
-            //console.log(pickedVals)
             enemyArray[i] = val
             let val2 = Math.floor(Math.random() * (64 - 6 + 1) + 6)
+
             while (pickedVals.includes(val2)) {
                 val2 = Math.floor(Math.random() * (64 - 6 + 1) + 6)
             }
+
             pickedVals.push(val2)
             playerArray[i] = val2
         }
+
         io.emit('cardsPicked', isPlayerA, playerArray, enemyArray)
     })
 
@@ -119,12 +126,13 @@ io.on('connect', function (socket) {
     })
 
     socket.on('disconnect', function () {
+        // If the player with the identifier disconnected, set the next player to have the identifier
         if (socket.id == playerAID) {
             hasPlayerA = 0
             playerAID = null
         }
+        
         console.log('A user disconnected: ' + socket.id)
         players = players.filter(player => player !== socket.id)
-        console.log('New array: ' + players)
     })
 })
