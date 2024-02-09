@@ -1,9 +1,13 @@
-# TBD
+tbd
 
-## TBD
+# Air Poker
 
-online multiplayer poker variation involving maths and memory
+An online multiplayer 1v1 poker variation involving maths and memory with slight elements of strategy first seen in the manga *Usogui*. The individual clients are hosted using github pages and the server is hosted using render. You can play it at https://arturnuriev1.github.io/
 
-client hosted using github pages and server hosted using adaptable
+## Rules
 
-only 90% finished but you can still play it at https://arturnuriev1.github.io/
+Each player is given five cards
+
+## Local Setup
+
+cd, the calculation stuff is done in calc.js

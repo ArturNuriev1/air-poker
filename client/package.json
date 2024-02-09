@@ -1,7 +1,7 @@
 {
-  "name": "air-poker",
+  "name": "ArturNuriev1.github.io",
   "version": "1",
-  "description": "Air Poker",
+  "description": "Online client to play Air Poker",
   "main": "src/index.js",
   "scripts": {
     "predeploy": "npm run build",
@@ -14,21 +14,13 @@
     "url": "git+https://github.com/ArturNuriev1/ArturNuriev1.github.io.git"
   },
   "homepage": "http://ArturNuriev1.github.io/ArturNuriev1.github.io",
-  "author": "Richard Davey <rdavey@gmail.com> (http://www.photonstorm.com)",
-  "license": "MIT",
-  "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
-  "bugs": {
-    "url": "https://github.com/photonstorm/phaser3-project-template/issues"
-  },
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
-    "file-loader": "^4.2.0",
     "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.3",
-    "raw-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
@@ -37,7 +29,7 @@
   },
   "dependencies": {
     "phaser": "^3.50.0",
-    "socket.io": "^4.7.1",
-    "socket.io-client": "^4.7.1"
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
   }
 }
