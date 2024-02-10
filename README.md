@@ -8,7 +8,7 @@ Each player is given five cards which each have a number from 6 to 64 written on
 
 A key rule is that whenever a poker hand is created the cards that it uses up cannot be reused afterwards. As an example, if in round 1 a card with the number 12 is played, it would create a 4oaK aces plus eight. If a card with the number 13 is played in the following turn, it cannot be a 4oaK aces plus nine as all the aces are already used up, so it will instead be a 4oaK twos plus five.
 
-Players take turns having the first bet, except for the first round where the person with the smaller number played bets first. Ante begins at 1 chip (referred to as Air-Bios) and increases by 1 every round. A player will lose after losing all their Air-Bios, or after five rounds the game will end and the person with the most Air-Bios remaining wins.
+Players take turns having the first bet, except for the first round where the person with the smaller number played bets first. Ante begins at 1 chip (referred to as Air-Bios) and increases by 1 every round. Folding will not reveal which card would have won, making it harder to keep track of which playing cards have been used. A player will lose after losing all their Air-Bios, or after five rounds the game will end and the person with the most Air-Bios remaining wins.
 
 ## Local Setup
 
