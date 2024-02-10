@@ -1,5 +1,3 @@
-tbd
-
 # Air Poker
 
 An online multiplayer 1v1 poker variation involving maths and memory with slight elements of strategy. The concept originates from the japanese manga series *Usogui*. The individual clients are hosted using github pages and the server is hosted using Render. I used this project as a fun way to learn javascript from scratch, it's powered by phaser and due to server limitations it currently supports one two-player lobby running at a time. You can play it at https://arturnuriev1.github.io/.
